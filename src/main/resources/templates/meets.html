@@ -8,7 +8,7 @@
 <body>
     <h1>List of meets</h1>
     <ul>
-        <li th:each="meets:${meets}">
+        <li th:each="meet:${meets}">
             <span th:text="${meet.topic}">Topic</span>
             (<span th:text="${meet.date}">Date</span>)
         </li>
