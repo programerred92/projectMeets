@@ -1,12 +1,14 @@
 package com.co.develop.rojinsky.meets.models;
 
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Meet {
     private long id;
     private String topic;
     private ZonedDateTime date;
-
+    private List<People> assistants = new ArrayList<>();
     public long getId() {
         return id;
     }
@@ -38,5 +40,13 @@ public class Meet {
         this.id = id;
         this.topic = topic;
         this.date = date;
+    }
+
+    public List<People> getAssistants() {
+        return assistants;
+    }
+
+    public void addAssistant(People assistant) {
+        assistants.add(assistant);
     }
 }
