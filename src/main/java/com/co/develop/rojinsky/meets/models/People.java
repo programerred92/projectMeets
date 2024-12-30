@@ -1,16 +1,22 @@
 package com.co.develop.rojinsky.meets.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="people")
 public class People {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String lastName;
+    private String lastname;
 
     public People(){}
 
-    public People(long id, String name, String lastName) {
+    public People(long id, String name, String lastname) {
         this.id = id;
         this.name = name;
-        this.lastName = lastName;
+        this.lastname = lastname;
     }
 
     public long getId() {
@@ -29,11 +35,11 @@ public class People {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 }

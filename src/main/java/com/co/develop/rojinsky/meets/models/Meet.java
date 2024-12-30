@@ -1,13 +1,25 @@
 package com.co.develop.rojinsky.meets.models;
 
+
+import jakarta.persistence.*;
+
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="meet")
 public class Meet {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String topic;
     private ZonedDateTime date;
+
+    @ManyToMany
+    @JoinTable(name="assistant",
+            joinColumns = {@JoinColumn(name="meet_id")},
+            inverseJoinColumns = {@JoinColumn(name="people_id")})
     private List<People> assistants = new ArrayList<>();
     public long getId() {
         return id;
