@@ -1,5 +1,6 @@
 package com.co.develop.rojinsky.meets.services;
 
+import com.co.develop.rojinsky.meets.data.PeopleRepository;
 import com.co.develop.rojinsky.meets.models.People;
 import org.springframework.stereotype.Service;
 
@@ -8,16 +9,13 @@ import java.util.List;
 @Service
 public class PeopleService {
 
-    private static final List<People> people = new ArrayList<>();
+    private final PeopleRepository peopleRepository;
 
-    static {
-        for (int i = 0; i < 5; i++) {
-            People person = new People(i, "Name " + i, "Lastname " + i);
-            people.add(person);
-        }
+    public PeopleService(PeopleRepository peopleRepository) {
+        this.peopleRepository = peopleRepository;
     }
 
     public List<People> getAllPeople(){
-        return people;
+        return peopleRepository.findAll();
     }
 }
