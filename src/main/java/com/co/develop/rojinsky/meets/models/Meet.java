@@ -61,4 +61,13 @@ public class Meet {
     public void addAssistant(People assistant) {
         assistants.add(assistant);
     }
+
+    @Override
+    public String toString() {
+        return "Meet{" +
+                "id=" + id +
+                ", topic='" + topic + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }
