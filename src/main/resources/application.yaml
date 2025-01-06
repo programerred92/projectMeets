@@ -17,3 +17,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: "none"
+database:
+  host: localhost
+  port: 3306
+  name: securitydb
+  user: root
+  password: 1234
