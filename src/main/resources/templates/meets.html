@@ -8,7 +8,16 @@
 <body>
     <h1>List of meets</h1>
     <ul>
-        <li th:each="meets:${meets}"></li>
+        <li th:each="meet:${meets}">
+            <span th:text="${meet.topic}">Topic</span>
+            (<span th:text="${#temporals.format(meet.date, 'dd-MMM-yyyy')}">Date</span>)
+            <ol>
+                <li th:each="person:${meet.assistants}">
+                    <span th:text="${person.name}"></span>
+                    <span th:text="${person.lastname}"></span>
+                </li>
+            </ol>
+        </li>
     </ul>
 </body>
 </html>
